@@ -5,5 +5,6 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 COPY tomcat-users.xml /usr/local/tomcat/conf/
 COPY context.xml /usr/local/tomcat/webapps/manager/META-INF/
+COPY build /usr/local/tomcat/webapps/build
 VOLUME tomcat:/usr/local/tomcat/webapps
 EXPOSE 8888
