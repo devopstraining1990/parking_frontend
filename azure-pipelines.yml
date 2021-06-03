@@ -19,7 +19,7 @@ stages:
       - task: Docker@2
         inputs:
            containerRegistry: 'DockerServiceConnection'
-           repository: 'devopstraining1990/parking'
+           repository: $(docker_repository)
            command: 'buildAndPush'
            Dockerfile: 'Dockerfile'
 
