@@ -21,4 +21,9 @@ steps:
   displayName: 'npm install and build'
 
 
-
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerServiceConnection'
+    repository: 'devopstraining1990/parking'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
