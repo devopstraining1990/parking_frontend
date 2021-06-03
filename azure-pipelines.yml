@@ -5,6 +5,12 @@ stages:
       pool: 
         vmImage: 'Ubuntu-18.04'
       continueOnError: true
+      
+      variables:
+      - group: test
+      - name: docker_repository
+        value: 'devopstraining1990/parking'
+
       steps: 
       - task: NodeTool@0
         inputs:
