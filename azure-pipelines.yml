@@ -29,7 +29,14 @@ stages:
            command: 'buildAndPush'
            Dockerfile: 'Dockerfile'
 
-
-
-
-
+  - stage : dev_deploy
+    jobs: 
+    - job: dev_deploy
+      pool: 
+        vmImage: 'Ubuntu-18.04'
+        environment: 'dev-hello'
+        strategy:
+        runOnce:
+          deploy:
+            steps:
+            – script: echo "hello, dev world !!!"
